@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 export const updateOnDbContent = (id,newUpdateContent,navigation) =>{
     console.log(newUpdateContent)
 return async (dispatch , getState)=>{
-        await  axios.patch(`http://localhost:5000/content/${id}`,newUpdateContent).then(res =>{
+        await  axios.patch(`https://boldblogger-server-arifbiswas.vercel.app/content/${id}`,newUpdateContent).then(res =>{
         console.log(res.data)
         const  state = getState();
      console.log(state)

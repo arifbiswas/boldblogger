@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 export const postContent = (content) =>{
     console.log(content)
 return async (dispatch , getState)=>{
-     await  axios.post("http://localhost:5000/content",content).then(res =>{
+     await  axios.post("https://boldblogger-server-arifbiswas.vercel.app/content",content).then(res =>{
         console.log(res.data)
         if(res.data.acknowledged){
           content._id = res.data.insertedId;
@@ -12,7 +12,7 @@ return async (dispatch , getState)=>{
           toast.success("Blog Add Successfully")
         }
         else{
-          toast.error("Blog add not Successfully")
+          toast.error("Blog add not Successfully") 
         }
       })
 }
@@ -20,7 +20,7 @@ return async (dispatch , getState)=>{
 export const postTags = (tags) =>{
     console.log(tags)
 return async (dispatch , getState)=>{
-     await  axios.post("http://localhost:5000/tags",tags).then(res =>{
+     await  axios.post("https://boldblogger-server-arifbiswas.vercel.app/tags",tags).then(res =>{
         console.log(res.data)
         if(res.data.acknowledged){
           dispatch(addTags(tags))

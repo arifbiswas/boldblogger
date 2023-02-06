@@ -1,5 +1,6 @@
 import axios from "axios";
 import { deleteBeforeContent } from "../actionCreators/actionCreators";
+import { toast } from 'react-toastify';
 export const deleteContent = (id) =>{
     console.log(id)
 return async (dispatch , getState)=>{
@@ -12,10 +13,13 @@ return async (dispatch , getState)=>{
         if(res.data.deletedCount > 0){
           const newDeleteBeforeContent = state.contents.filter(content => content._id !== id)
           dispatch(deleteBeforeContent(newDeleteBeforeContent))
+          toast.success("Delete Successfully")
         }
       })
      }else{
+      toast.error("Delete not Successfully")
         return;
+      
      }
  }
 }

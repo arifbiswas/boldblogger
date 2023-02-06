@@ -42,8 +42,7 @@ const UpdateContent = () => {
     content.date = new Date().toLocaleDateString();;
     content.view = 0;
 
-   dispatch(updateOnDbContent(id,content))
-   navigation("/dashboard")
+   dispatch(updateOnDbContent(id,content,navigation))
   };
 
   const addSelectTags = (tag)=>{

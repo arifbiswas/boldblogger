@@ -1,6 +1,8 @@
 import axios from "axios";
 import { updateContent } from "../actionCreators/actionCreators";
-export const updateOnDbContent = (id,newUpdateContent) =>{
+import { toast } from 'react-toastify';
+
+export const updateOnDbContent = (id,newUpdateContent,navigation) =>{
     console.log(newUpdateContent)
 return async (dispatch , getState)=>{
         await  axios.patch(`http://localhost:5000/content/${id}`,newUpdateContent).then(res =>{
@@ -12,7 +14,13 @@ return async (dispatch , getState)=>{
           const updateBeforeContent = state.contents.filter(content => content._id !== id)
         
         const updateAfterContent = [...updateBeforeContent,res.data.newContent]
+
           dispatch(updateContent(updateAfterContent))
+          navigation("/dashboard")
+          toast.success("Update successfully")
+        }
+        else{
+          toast.error("Update not successfully")
         }
       })
      

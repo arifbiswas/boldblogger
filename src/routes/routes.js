@@ -9,7 +9,7 @@ import AllContent from "../pages/pages/Dashboard/AllContent";
 import UpdateContent from "../pages/pages/Dashboard/UpdateContent";
 import Home from "../pages/pages/Home/Home";
 import ReadingHistory from "../pages/pages/ReadingHistory/ReadingHistory";
-import TEST from "../pages/TEST";
+
 
 export const router = createBrowserRouter([
     {
@@ -28,10 +28,7 @@ export const router = createBrowserRouter([
                 path : "/readingHistory",
                 element : <ReadingHistory></ReadingHistory>
             },
-            {
-                path : "/test",
-                element : <TEST></TEST>
-            },
+          
             {
                 path : "/dashboard",
                 element : <DashboardLayout></DashboardLayout>,

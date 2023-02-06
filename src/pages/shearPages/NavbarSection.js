@@ -1,6 +1,6 @@
 import React from "react";
 import {Navbar} from "flowbite-react"
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useState } from "react";
 
@@ -10,7 +10,8 @@ const NavbarSection = () => {
     <div  className="relative">
       <Navbar fluid={true} rounded={true}>
         <Navbar.Brand>
-          <img
+         <Link to="/" className="flex">
+         <img
             src="https://cdn3d.iconscout.com/3d/free/thumb/blogger-2-5645854-4695712.png"
             className="mr-3 h-6 sm:h-9"
             alt="Flowbite Logo"
@@ -18,6 +19,7 @@ const NavbarSection = () => {
           <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
             Bold Blogger
           </span>
+         </Link>
         </Navbar.Brand>
         {/* <Navbar.Toggle /> */}
         <Navbar.Collapse>
